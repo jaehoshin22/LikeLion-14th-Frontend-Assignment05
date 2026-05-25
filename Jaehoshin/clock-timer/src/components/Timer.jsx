@@ -8,6 +8,7 @@ function Timer() {
             setSec((prev) => {
                if (prev <= 1) {
                     clearInterval(id);
+                    console.log('타이머 정리됨');
                     return 0;
                 }
                 return prev - 1;
@@ -18,7 +19,6 @@ function Timer() {
 
         return () => {
             clearInterval(id);
-            console.log('타이머 정리됨');
         }; 
     }, []);
     //컴포넌트가 사라지면 setinterval도 멈춤
